@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  padding: 0;
+  margin: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#160202), to(#462727));
+  background: linear-gradient(to right, #160202, #462727);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#app {
+  display: -ms-grid;
+  display: grid;
   min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: (100px)[4];
+      grid-template-columns: repeat(4, 100px);
+  -ms-grid-rows: minmax(120px, auto) (100px)[5];
+      grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .prev-op {
+  color: rgba(255, 165, 0, 0.6);
+  font-size: 1.5em;
+}
+
+.output .curr-op {
+  color: white;
+  font-size: 2.5em;
+}
+
+button {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border-radius: 7%;
+  border: 2px black solid;
+}
+
+button:hover {
+  background-color: #c5a1a1;
+}
+
+button:active {
+  background-color: #8b6767;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#clear, #equals {
+  background-color: #9b2727;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#clear:hover, #equals:hover {
+  color: white;
 }
+
+#clear:active, #equals:active {
+  background-color: #611a1a;
+}
+
+p {
+  grid-column: 1 / -1;
+  color: #f7e5e5;
+  font-size: 1.5em;
+  text-align: center;
+}
+/*# sourceMappingURL=App.css.map */
